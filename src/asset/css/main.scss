@@ -6,10 +6,18 @@ body,
   height: 100%;
 }
 
+.container-layout {
+  display: flex;
+  background-color: #f3f7fa;
+  section {
+    width: 100%;
+  }
+}
+
 .show-toast-button-wrapper {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   margin-top: 50px;
   .show-toast-button {
@@ -17,13 +25,27 @@ body,
     height: 23px;
     border: none;
     border-radius: 3px;
-    background-color: #999;
     text-align: center;
-    color: #ffffff;
+    color: #333;
     cursor: pointer;
 
-    &:hover {
-      color: #333;
+    &.normal {
+      background-color: #4ba3fa;
+      &:hover {
+        background-color: #3081d0;
+      }
+    }
+    &.warning {
+      background-color: #e08d00;
+      &:hover {
+        background-color: #ba7203;
+      }
+    }
+    &.error {
+      background-color: #be0c00;
+      &:hover {
+        background-color: #9b0e05;
+      }
     }
   }
 }
