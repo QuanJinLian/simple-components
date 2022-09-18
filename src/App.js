@@ -1,6 +1,6 @@
 import React from 'react';
-import { Toast, toastService } from './components/toast';
 import './asset/css/main.scss';
+import { Toast, toastService } from './components';
 
 function App() {
   const showToast = level => {
