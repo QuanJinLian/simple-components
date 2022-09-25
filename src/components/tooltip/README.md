@@ -15,9 +15,9 @@
 ![](https://user-images.githubusercontent.com/79301822/192125714-a282815a-c6cf-4685-9bcc-52c781d58f25.png)
 
 #### 공통 position
-#####x => children.getBoundingClientRect().x +  window.scrollX ;
-#####y => children.getBoundingClientRect().y +  window.scrollY ;
-###
+####x => children.getBoundingClientRect().x +  window.scrollX ;
+####y => children.getBoundingClientRect().y +  window.scrollY ;
+
 
 #### 경우의 수 - placement = 'top-...'  ( 수직 위치 )
 ![](https://user-images.githubusercontent.com/79301822/192125711-e035fc5d-04ab-4a87-9230-5b6f8bfc1cdd.png)

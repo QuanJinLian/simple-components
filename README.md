@@ -14,3 +14,4 @@ React, javascript, css, scss, html
 
 ## 컴포넌트 리스트
 ### [Toast](https://github.com/QuanJinLian/simple-components/tree/main/src/components/toast) 
+### [Tooltip] (https://github.com/QuanJinLian/simple-components/tree/main/src/components/tooltip)
