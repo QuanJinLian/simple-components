@@ -1,0 +1,144 @@
+.tooltip-container {
+  width: max-content;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  visibility: visible;
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  .arrow-border {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px;
+    position: absolute;
+
+    &.border-top,
+    &.border-top-left,
+    &.border-top-right {
+      top: 100%;
+      transform: translate(-50%);
+      border-color: #1a2735 transparent transparent transparent;
+    }
+
+    &.border-right,
+    &.border-right-top,
+    &.border-right-bottom {
+      left: -10px;
+      transform: translateY(-50%);
+      border-color: transparent #1a2735 transparent transparent;
+    }
+
+    &.border-bottom,
+    &.border-bottom-left,
+    &.border-bottom-right {
+      top: 0;
+      transform: translate(-50%, -10px);
+      border-color: transparent transparent #1a2735 transparent;
+    }
+
+    &.border-left,
+    &.border-left-top,
+    &.border-left-bottom {
+      right: -10px;
+      transform: translateY(-50%);
+      border-color: transparent transparent transparent #1a2735;
+    }
+
+    &.border-top,
+    &.border-bottom {
+      left: 50%;
+    }
+    &.border-top-left,
+    &.border-bottom-left {
+      left: 10px;
+    }
+    &.border-top-right,
+    &.border-bottom-right {
+      left: calc(100% - 10px);
+    }
+
+    &.border-right,
+    &.border-left {
+      top: 50%;
+    }
+    &.border-right-top,
+    &.border-left-top {
+      top: 10px;
+    }
+    &.border-right-bottom,
+    &.border-left-bottom {
+      top: calc(100% - 10px);
+    }
+  }
+
+  .tooltip-inner {
+    position: relative !important;
+    padding: 2px 8px;
+    min-width: 30px;
+    min-height: 22px;
+    font-size: 11px;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    word-wrap: break-word;
+    background-color: #1a2735;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+  }
+}
+
+//  mouseEnter Delay || mouseLeave Delay || tooltip mouseOver visible 예제
+
+//.tooltip-container {
+//  // target mouseEnter delay  =>  overlayClassName="enter-delay"
+//  &.enter-delay {
+//    transition-delay: 1s;
+//    visibility: visible;
+//
+//    &.hidden {
+//      transition-delay: 0s;
+//      visibility: hidden;
+//    }
+//  }
+//
+//  // target mouseLeave delay  =>  overlayClassName="leave-delay"
+//  &.leave-delay {
+//    transition-delay: 0s;
+//    visibility: visible;
+//
+//    &.hidden {
+//      transition-delay: 1s;
+//      visibility: hidden;
+//    }
+//  }
+//
+//  // tooltip 부분 mouseOver 시 툴팁 사라지지 않게 함   =>  overlayClassName="hover-view"
+//  &.hover-view {
+//    transition-delay: 0s;
+//    visibility: visible;
+//
+//    &.hidden {
+//      transition-delay: 0.5s;
+//      visibility: hidden;
+//    }
+//
+//    &:hover.hidden {
+//      visibility: visible;
+//    }
+//
+//    &:not(:hover).hidden {
+//      visibility: hidden;
+//    }
+//  }
+//}
