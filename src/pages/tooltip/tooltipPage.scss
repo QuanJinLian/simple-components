@@ -4,9 +4,71 @@ button,
   background-color: #999;
   border: 1px solid #333;
   border-radius: 4px;
+  cursor: pointer;
+}
+.top {
+  > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .text-test {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.demo2 {
+  button {
+    width: 150px;
+    display: flex;
+    margin: 10px 0;
+    justify-content: center;
+  }
+}
+
+//  mouseEnter Delay || mouseLeave Delay || tooltip mouseOver visible 예제
+
+.tooltip-container {
+  // target mouseEnter delay  =>  overlayClassName="enter-delay"
+  &.enter-delay {
+    transition-delay: 1s;
+    visibility: visible;
+
+    &.hidden {
+      transition-delay: 0s;
+      visibility: hidden;
+    }
+  }
+
+  // target mouseLeave delay  =>  overlayClassName="leave-delay"
+  &.leave-delay {
+    transition-delay: 0s;
+    visibility: visible;
+
+    &.hidden {
+      transition-delay: 1s;
+      visibility: hidden;
+    }
+  }
+
+  // tooltip 부분 mouseOver 시 툴팁 사라지지 않게 함   =>  overlayClassName="hover-view"
+  &.hover-view {
+    transition-delay: 0s;
+    visibility: visible;
+
+    &.hidden {
+      transition-delay: 0.5s;
+      visibility: hidden;
+    }
+
+    &:hover.hidden {
+      visibility: visible;
+    }
+
+    &:not(:hover).hidden {
+      visibility: hidden;
+    }
+  }
 }

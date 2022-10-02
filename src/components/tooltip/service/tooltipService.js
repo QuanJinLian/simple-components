@@ -78,7 +78,7 @@ export function getChildrenDom(children) {
   const isIncludeTag = isArray && children?.filter(child => typeof child === 'object')?.length;
 
   if (children) {
-    if (children.$$typeof === 'Symbol(react.element)') {
+    if (children.$$typeof) {
       if (typeof children.type === 'function') return <div>{children}</div>;
       else return children;
     } else if (isIncludeTag) {
