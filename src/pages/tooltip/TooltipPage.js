@@ -2,6 +2,16 @@ import React from 'react';
 import { Tooltip } from '../../components/tooltip';
 import './tooltipPage.scss';
 
+const TextTest = () => {
+  return (
+    <div className="text-test">
+      <div>TL</div>
+      <div>TL</div>
+      <div>TL</div>
+    </div>
+  );
+};
+
 const text = (
   <div>
     <span style={{ display: 'flex' }}>prompt text </span>
@@ -20,7 +30,8 @@ export function TooltipPage() {
         }}
       >
         <Tooltip placement="top-left" title={text}>
-          <button>TL</button>
+          {/*<button>TL</button>*/}
+          <TextTest />
         </Tooltip>
         <Tooltip placement="top" title={text}>
           <button>Top</button>

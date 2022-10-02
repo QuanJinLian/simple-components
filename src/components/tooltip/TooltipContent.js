@@ -1,6 +1,21 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { checkPlacement, setPosition } from './service/tooltipService';
 
+export const DIRECTION = {
+  TOP: 'top',
+  TOP_LEFT: 'top-left',
+  TOP_RIGHT: 'top-right',
+  LEFT: 'left',
+  LEFT_TOP: 'left-top',
+  LEFT_BOTTOM: 'left-bottom',
+  BOTTOM: 'bottom',
+  BOTTOM_LEFT: 'bottom-left',
+  BOTTOM_RIGHT: 'bottom-right',
+  RIGHT: 'right',
+  RIGHT_TOP: 'right-top',
+  RIGHT_BOTTOM: 'right-bottom',
+};
+
 function TooltipContent({ hidden, targetRect, title, maxWidth, placement, overlayClassName }) {
   const ref = useRef(null);
   const [textStyle, setTextStyle] = useState({});
@@ -26,7 +41,10 @@ function TooltipContent({ hidden, targetRect, title, maxWidth, placement, overla
       const rect_children = targetRect;
 
       if (rect_text.width && rect_text.height) {
-        const direction = _placement ? _placement : checkPlacement(rect_text, rect_children);
+        const direction =
+          _placement && Object.values(DIRECTION).includes(_placement)
+            ? _placement
+            : checkPlacement(rect_text, rect_children);
         const style_text = setPosition(direction, rect_text, rect_children);
 
         setTextStyle(style_text);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { DIRECTION } from '../TooltipContent';
 
 export function setPosition(direction, rect_text, rect_children) {
   let style_text = {};
@@ -10,51 +11,51 @@ export function setPosition(direction, rect_text, rect_children) {
   const defaultTop = scrollY + rect_children?.y;
 
   if (
-    direction === 'top' ||
-    direction === 'bottom' ||
-    direction === 'top-left' ||
-    direction === 'bottom-left' ||
-    direction === 'top-right' ||
-    direction === 'bottom-right'
+    direction === DIRECTION.TOP ||
+    direction === DIRECTION.BOTTOM ||
+    direction === DIRECTION.TOP_LEFT ||
+    direction === DIRECTION.BOTTOM_LEFT ||
+    direction === DIRECTION.TOP_RIGHT ||
+    direction === DIRECTION.BOTTOM_RIGHT
   ) {
     /** 수평 위치  */
-    if (direction === 'top' || direction === 'bottom') {
+    if (direction === 'top' || direction === DIRECTION.BOTTOM) {
       left_text = defaultLeft + (rect_children.width - rect_text.width) / 2 + 'px';
-    } else if (direction === 'top-left' || direction === 'bottom-left') {
+    } else if (direction === DIRECTION.TOP_LEFT || direction === DIRECTION.BOTTOM_LEFT) {
       left_text = defaultLeft + 'px';
-    } else if (direction === 'top-right' || direction === 'bottom-right') {
+    } else if (direction === DIRECTION.TOP_RIGHT || direction === DIRECTION.BOTTOM_RIGHT) {
       left_text = defaultLeft + rect_children.width - rect_text.width + 'px';
     }
 
     /** 수직 위치  */
-    if (direction === 'top' || direction === 'top-left' || direction === 'top-right') {
+    if (direction === 'top' || direction === DIRECTION.TOP_LEFT || direction === DIRECTION.TOP_RIGHT) {
       top_text = defaultTop - rect_text.height - 10 + 'px'; // 5 + 3
     } else {
-      // direction === 'bottom' || direction === 'bottom-left' || direction === 'bottom-right'
+      // direction === DIRECTION.BOTTOM || direction === DIRECTION.BOTTOM_LEFT || direction === DIRECTION.BOTTOM_RIGHT
       top_text = defaultTop + rect_children.height + 10 + 'px';
     }
   } else if (
-    direction === 'left' ||
-    direction === 'right' ||
-    direction === 'left-top' ||
-    direction === 'right-top' ||
-    direction === 'left-bottom' ||
-    direction === 'right-bottom'
+    direction === DIRECTION.LEFT ||
+    direction === DIRECTION.RIGHT ||
+    direction === DIRECTION.LEFT_TOP ||
+    direction === DIRECTION.RIGHT_TOP ||
+    direction === DIRECTION.LEFT_BOTTOM ||
+    direction === DIRECTION.RIGHT_BOTTOM
   ) {
     /** 수직 위치  */
-    if (direction === 'left' || direction === 'right') {
+    if (direction === DIRECTION.LEFT || direction === DIRECTION.RIGHT) {
       top_text = defaultTop + (rect_children.height - rect_text.height) / 2 + 'px';
-    } else if (direction === 'left-top' || direction === 'right-top') {
+    } else if (direction === DIRECTION.LEFT_TOP || direction === DIRECTION.RIGHT_TOP) {
       top_text = defaultTop + 'px';
-    } else if (direction === 'left-bottom' || direction === 'right-bottom') {
+    } else if (direction === DIRECTION.LEFT_BOTTOM || direction === DIRECTION.RIGHT_BOTTOM) {
       top_text = defaultTop + rect_children.height - rect_text.height + 'px';
     }
 
     /** 수평 위치  */
-    if (direction === 'left' || direction === 'left-top' || direction === 'left-bottom') {
+    if (direction === DIRECTION.LEFT || direction === DIRECTION.LEFT_TOP || direction === DIRECTION.LEFT_BOTTOM) {
       left_text = defaultLeft - rect_text.width - 10 + 'px';
     } else {
-      //  direction === 'right' || direction === 'right-top' || direction === 'right-bottom'
+      //  direction === DIRECTION.RIGHT || direction === DIRECTION.RIGHT_TOP || direction === DIRECTION.RIGHT_BOTTOM
       left_text = defaultLeft + rect_children.width + 10 + 'px';
     }
   }
@@ -67,9 +68,9 @@ export function setPosition(direction, rect_text, rect_children) {
 
 export function checkPlacement(rect_text, rect_children) {
   if (rect_children.top > rect_text.height + 13) return 'top';
-  if (window.innerWidth - rect_children.x - rect_children.right > rect_text.width + 13) return 'right';
-  if (window.innerHeight - rect_children.y - rect_children.bottom > rect_text.height + 13) return 'bottom';
-  if (rect_children.left > rect_text.width + 13) return 'left';
+  if (window.innerWidth - rect_children.x - rect_children.right > rect_text.width + 13) return DIRECTION.RIGHT;
+  if (window.innerHeight - rect_children.y - rect_children.bottom > rect_text.height + 13) return DIRECTION.BOTTOM;
+  if (rect_children.left > rect_text.width + 13) return DIRECTION.LEFT;
 }
 
 export function getChildrenDom(children) {
@@ -77,8 +78,9 @@ export function getChildrenDom(children) {
   const isIncludeTag = isArray && children?.filter(child => typeof child === 'object')?.length;
 
   if (children) {
-    if (children.$$typeof) {
-      return children;
+    if (children.$$typeof === 'Symbol(react.element)') {
+      if (typeof children.type === 'function') return <div>{children}</div>;
+      else return children;
     } else if (isIncludeTag) {
       return <div>{children}</div>;
     } else {
