@@ -1,8 +1,21 @@
 import React from 'react';
 import useToast from './hooks/useToast';
 
+const defaultConfig = {
+  onClose: () => {},
+  duration: useToast.getTimer(),
+  wrapperClassName: '',
+};
+
 const ToastItem = React.memo(function ToastItem({ toastMsg, close }) {
-  const { key, level, msg, item } = toastMsg;
+  const { key, level, msg, config = {} } = toastMsg;
+
+  const {
+    duration = defaultConfig.duration,
+    onClose = defaultConfig.onClose,
+    wrapperClassName = defaultConfig.wrapperClassName,
+  } = config;
+
   let timer;
   const clearTimer = () => {
     if (timer) {
@@ -11,25 +24,26 @@ const ToastItem = React.memo(function ToastItem({ toastMsg, close }) {
     }
   };
 
+  const onClick = () => {
+    close(key);
+    clearTimer();
+    onClose?.(toastMsg);
+  };
+
   /*컴포넌트 마운트 될 때*/
   timer = setTimeout(() => {
-    close(key);
-    clearTimer();
-  }, useToast.getTimer() * 1000);
+    onClick();
+  }, duration * 1000);
 
-  const onClick = () => {
-    clearTimer();
-    close(key);
-  };
   const levelClassName = levelClass(level);
 
   return (
     <>
-      <div className={`toast-box ${levelClassName}`}>
+      <div className={`toast-box ${wrapperClassName} ${levelClassName}`}>
         <div className="msg-icon-box">
           <div className="msg-icon" />
         </div>
-        <div className="msg-letter">{item ? `${msg}.item:${item}` : msg}</div>
+        <div className="msg-letter">{msg ?? ''}</div>
         <div className="toast-close cursor-pointer" onClick={onClick} />
       </div>
     </>

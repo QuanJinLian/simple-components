@@ -3,8 +3,8 @@ const service = (() => {
 
   // <Toast /> 내부에서 dispatch 함수를 할당 해줌
   return {
-    add: (msg, level, item) => {
-      if (toastService.dispatch) toastService.dispatch(addToast(msg, level, item));
+    add: (msg, level, config) => {
+      if (toastService.dispatch) toastService.dispatch(addToast(msg, level, config));
     },
     cancel: key => {
       if (toastService.dispatch) toastService.dispatch(cancelToast(key));
@@ -40,7 +40,7 @@ export function toastReducer(state, action) {
 }
 
 let num = 0;
-export const addToast = (msg, level, item) => {
+export const addToast = (msg, level, config) => {
   let timeStamp = Date.now() + '-' + num;
   num++;
   return {
@@ -49,7 +49,7 @@ export const addToast = (msg, level, item) => {
       key: timeStamp,
       msg: msg,
       level: level,
-      item: item,
+      config: config,
     },
   };
 };
