@@ -11,13 +11,13 @@ export function ToastPage() {
     <>
       <Toast />
       <div className="show-toast-button-wrapper">
-        <button className="show-toast-button normal" onClick={() => showToast(1)}>
+        <button className="show-toast-button normal" style={{ width: '100px' }} onClick={() => showToast(1)}>
           normal toast
         </button>
-        <button className="show-toast-button warning" onClick={() => showToast(2)}>
+        <button className="show-toast-button warning" style={{ width: '100px' }} onClick={() => showToast(2)}>
           waring toast
         </button>
-        <button className="show-toast-button error" onClick={() => showToast(3)}>
+        <button className="show-toast-button error" style={{ width: '100px' }} onClick={() => showToast(3)}>
           error toast
         </button>
       </div>
