@@ -19,7 +19,7 @@ export function setPosition(direction, rect_text, rect_children) {
     direction === DIRECTION.BOTTOM_RIGHT
   ) {
     /** 수평 위치  */
-    if (direction === 'top' || direction === DIRECTION.BOTTOM) {
+    if (direction === DIRECTION.TOP || direction === DIRECTION.BOTTOM) {
       left_text = defaultLeft + (rect_children.width - rect_text.width) / 2 + 'px';
     } else if (direction === DIRECTION.TOP_LEFT || direction === DIRECTION.BOTTOM_LEFT) {
       left_text = defaultLeft + 'px';
@@ -28,7 +28,7 @@ export function setPosition(direction, rect_text, rect_children) {
     }
 
     /** 수직 위치  */
-    if (direction === 'top' || direction === DIRECTION.TOP_LEFT || direction === DIRECTION.TOP_RIGHT) {
+    if (direction === DIRECTION.TOP || direction === DIRECTION.TOP_LEFT || direction === DIRECTION.TOP_RIGHT) {
       top_text = defaultTop - rect_text.height - 10 + 'px'; // 5 + 3
     } else {
       // direction === DIRECTION.BOTTOM || direction === DIRECTION.BOTTOM_LEFT || direction === DIRECTION.BOTTOM_RIGHT
@@ -79,8 +79,11 @@ export function getChildrenDom(children) {
 
   if (children) {
     if (children.$$typeof) {
-      if (typeof children.type === 'function') return <div>{children}</div>;
-      else return children;
+      if (typeof children.type === 'function') {
+        const _children = children.type();
+        if (typeof children.type === 'function') return getChildrenDom(_children);
+        else return _children;
+      } else return children;
     } else if (isIncludeTag) {
       return <div>{children}</div>;
     } else {

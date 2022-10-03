@@ -2,14 +2,18 @@ import React from 'react';
 import { Tooltip } from '../../components/tooltip';
 import './tooltipPage.scss';
 
-const TextTest = () => {
+const InnerComponent = () => {
   return (
-    <div className="text-test">
+    <div className="inner">
       <div>TL</div>
       <div>TL</div>
       <div>TL</div>
     </div>
   );
+};
+
+const TextTest = () => {
+  return <InnerComponent />;
 };
 
 const text = (
