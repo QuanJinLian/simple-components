@@ -1,3 +1,10 @@
-/node_modules
+node_modules
 dist
+bin
 *.log
+/.idea
+.vscode
+package-lock.json
+*.css
+*.css.map
+*.scssc
