@@ -1,6 +1,6 @@
 import React from 'react';
-import { Tooltip } from '../../components/tooltip';
 import './tooltipPage.scss';
+import { Tooltip } from '../../components';
 
 const InnerComponent = () => {
   return (

@@ -50,7 +50,7 @@
 
 ## 사용법
 ```
-import Tooltip from './components/tooltip/Tooltip';
+import { Tooltip } from '../../components';
 
 
 function App() {
