@@ -1,3 +1,5 @@
+import { nanoid, deepClone } from '../../common';
+
 const service = (() => {
   const toastService = { keepSecond: 5 };
 
@@ -29,7 +31,7 @@ const CANCEL_TOASTMSG = 'toast/TOASTMSG';
 export function toastReducer(state, action) {
   switch (action.type) {
     case ADD_TOASTMSG:
-      let newList = JSON.parse(JSON.stringify(state));
+      let newList = deepClone(state);
       newList.unshift(action.toastMsg);
       return newList;
     case CANCEL_TOASTMSG:
@@ -39,10 +41,8 @@ export function toastReducer(state, action) {
   }
 }
 
-let num = 0;
 export const addToast = (msg, level, config) => {
-  let timeStamp = Date.now() + '-' + num;
-  num++;
+  let timeStamp = nanoid();
   return {
     type: ADD_TOASTMSG,
     toastMsg: {

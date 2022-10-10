@@ -1,13 +1,16 @@
 import React from 'react';
 import { Toast, toastService } from '../../components';
 
+let num = 0;
 export function ToastPage() {
   const showToast = (level, duration, onClose) => {
     const name = level === 1 ? 'normal' : level === 2 ? 'waring' : 'error';
-    toastService.add(`this is a ${name} toast`, level, { duration, onClose });
+    num++;
+    toastService.add(`this is a ${name} - ${num} toast`, level, { duration, onClose });
   };
 
   const onClose = toastMsg => {
+    // console.log('toastMsg', toastMsg);
     toastService.add(`${toastMsg.key} toast is closed`, 1);
   };
   return (
