@@ -29,9 +29,10 @@
       2. 2 => warning (color - yellow)
       3. 3 => error (color - red)
    3. config: object
-      1. duration: number (Time(seconds) before auto-dismiss)
-      2. onClose : fn (Specify a function that will be called when the message is clicked)
-      3. wrapperClassName: string (ToastItem wrapper className to replace icon)
+      1. duration: number (개별 토스트 유지 초수)
+      2. onClose : fn (토스트 없어 질때 실행하는 함수)
+         - 넘겨 받는 props : {key, level, msg}
+      3. wrapperClassName: string (개별 토스트 랩핑하는 div className)
          - ex) .[wrapperClassName] > div.msg-icon-box > div.msg-icon { background : url(...)}
 3. toastService.getTimer() 현재 유지 시간 구함 (단위 초)
    1. default : 5s
