@@ -380,7 +380,7 @@ $navigation-menu-height: unquote('calc(100vh - #{$navigation-header-height} - #{
       padding-bottom: 11px;
     }
 
-    @each $navSvgIcon in tooltip, toast, navigation, router, keyboard {
+    @each $navSvgIcon in tooltip, toast, navigation, router, keyboard, form {
       .#{$navigation-prefix}-#{$navSvgIcon} {
         content: url('../image/#{$navSvgIcon}-normal.svg');
 
@@ -408,6 +408,8 @@ $navigation-menu-height: unquote('calc(100vh - #{$navigation-header-height} - #{
       @include flexbox();
       @include flex-direction(row);
       @include flex-wrap(nowrap);
+
+      align-items: flex-end;
       _font-size: 0.93rem;
       font-size: 12px;
       cursor: pointer;

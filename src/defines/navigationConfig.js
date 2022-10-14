@@ -34,13 +34,24 @@ export const initialMenu = [
   },
   {
     id: 4,
-    name: 'Navigation',
-    icon: 'navigation',
+    name: 'form',
+    icon: 'form',
     subMenu: [
       {
-        name: 'Navigation',
-        path: '/navigation',
+        name: 'useForm',
+        path: '/useForm',
       },
     ],
   },
+  // {
+  //   id: 4,
+  //   name: 'Navigation',
+  //   icon: 'navigation',
+  //   subMenu: [
+  //     {
+  //       name: 'Navigation',
+  //       path: '/navigation',
+  //     },
+  //   ],
+  // },
 ];

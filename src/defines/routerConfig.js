@@ -1,4 +1,4 @@
-import { NavigationPage, ToastPage, TooltipPage, ESCTestPage } from '../pages';
+import { NavigationPage, ToastPage, TooltipPage, ESCTestPage, FormTest } from '../pages';
 
 export const routesConfig = [
   {
@@ -15,6 +15,11 @@ export const routesConfig = [
     name: 'esc',
     path: '/esc',
     component: ESCTestPage,
+  },
+  {
+    name: 'useForm',
+    path: '/useForm',
+    component: FormTest,
   },
   {
     name: 'navigation',
