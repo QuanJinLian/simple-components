@@ -23,6 +23,17 @@ export const initialMenu = [
   },
   {
     id: 3,
+    name: 'Keyboard',
+    icon: 'keyboard',
+    subMenu: [
+      {
+        name: 'ESC',
+        path: '/esc',
+      },
+    ],
+  },
+  {
+    id: 4,
     name: 'Navigation',
     icon: 'navigation',
     subMenu: [

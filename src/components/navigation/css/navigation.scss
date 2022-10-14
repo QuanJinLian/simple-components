@@ -329,7 +329,6 @@ $navigation-menu-height: unquote('calc(100vh - #{$navigation-header-height} - #{
         _margin-left: 20px;
         border-top: solid 1px rgba(255, 255, 255, 0.15);
         img.#{$navigation-prefix}-logo {
-          //content: url('image/logo/atto-logo.svg');
           margin-top: 16px;
           margin-bottom: 16px;
           width: 104px;
@@ -381,7 +380,7 @@ $navigation-menu-height: unquote('calc(100vh - #{$navigation-header-height} - #{
       padding-bottom: 11px;
     }
 
-    @each $navSvgIcon in tooltip, toast, navigation, router {
+    @each $navSvgIcon in tooltip, toast, navigation, router, keyboard {
       .#{$navigation-prefix}-#{$navSvgIcon} {
         content: url('../image/#{$navSvgIcon}-normal.svg');
 

@@ -1,4 +1,4 @@
-import { NavigationPage, ToastPage, TooltipPage } from '../pages';
+import { NavigationPage, ToastPage, TooltipPage, ESCTestPage } from '../pages';
 
 export const routesConfig = [
   {
@@ -10,6 +10,11 @@ export const routesConfig = [
     name: 'tooltip',
     path: '/tooltip',
     component: TooltipPage,
+  },
+  {
+    name: 'esc',
+    path: '/esc',
+    component: ESCTestPage,
   },
   {
     name: 'navigation',
