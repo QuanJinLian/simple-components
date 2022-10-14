@@ -41,4 +41,4 @@
 
 ## 최종 효과
 
-![](https://user-images.githubusercontent.com/79301822/190897963-feee9bf5-1d68-42c6-9dbf-528929468e80.gif)
+![](https://user-images.githubusercontent.com/79301822/195764511-46af0545-fc44-439f-ac9d-3f0f652c9783.gif)
