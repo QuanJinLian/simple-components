@@ -1,19 +1,80 @@
-button,
-.text-test,
-.inner {
+.test-button {
   width: 70px;
-  background-color: #999;
-  border: 1px solid #333;
   border-radius: 4px;
+  background: #1aab8a;
+  color: #fff;
+  border: none;
+  position: relative;
+  font-size: 15px;
+  padding: 2px 0;
+  margin: 2px 2px;
   cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+
+  &:hover {
+    background: #fff;
+    color: #1aab8a;
+    &::before,
+    &::after {
+      width: 100%;
+      transition: 800ms ease all;
+    }
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #1aab8a;
+    transition: 400ms ease all;
+  }
+  &::after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
 }
-.top {
+div.inner {
+  height: 21px;
+}
+
+.demo {
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.top-wrapper {
+  margin-left: 70px;
+  white-space: nowrap;
   > div {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 }
+.left-wrapper {
+  width: 70px;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+.right-wrapper {
+  width: 70px;
+  margin-left: 290px;
+  display: flex;
+  flex-direction: column;
+}
+.bottom-wrapper {
+  margin-left: 70px;
+  clear: both;
+  white-space: nowrap;
+}
+
 .text-test {
   display: inline-flex;
   align-items: center;
@@ -21,6 +82,12 @@ button,
 }
 
 .demo2 {
+  margin-top: 50px;
+  margin-left: 100px;
+  > div {
+    margin-left: 100px;
+    white-space: nowrap;
+  }
   button {
     width: 150px;
     display: flex;
@@ -72,4 +139,7 @@ button,
       visibility: hidden;
     }
   }
+}
+.prompt-text__span {
+  display: flex;
 }
