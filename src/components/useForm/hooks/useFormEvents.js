@@ -126,47 +126,47 @@ export function useFormEvents(stateObj, checkValidation) {
       const _errors = {};
       const elementsObj = {};
       const initialValues = getInitialValues();
-      // if (elements?.length) {
-      //   for (let ele of elements) {
-      //     const name = ele.name;
-      //     elementsObj[name] = ele;
-      //     if (name && !initialValues[name]) {
-      //       if (ele.type === 'checkbox') {
-      //         const _checked = ele.checked;
-      //         if (valueAs[name] === valueAs_default.VALUEASTOGGLE) {
-      //           _values[name] = _checked;
-      //         } else {
-      //           _values[name] = Array.isArray(_values[name]) ? _values[name].filter(v => v !== ele.value) : [];
-      //           if (_checked) _values[name].push(ele.value);
-      //         }
-      //       } else if (ele.type === 'radio' && valueAs[name] === valueAs_default.VALUEASTOGGLE) {
-      //         if (_values[name] === 'true') {
-      //           _values[name] = true;
-      //         } else if (_values[name] === 'false') {
-      //           _values[name] = false;
-      //         }
-      //       } else {
-      //         _values[name] = ele.value;
-      //       }
-      //     }
-      //   }
-      //   // 다중 선택 checkbox 때문에 분리 함
-      //   for (let [key, value] of Object.entries(_values)) {
-      //     const ele = elementsObj[key];
-      //     const error = constraintValidation(ele, customValidates[key], valueAs[key], value);
-      //     if (error.type) {
-      //       _errors[key] = error;
-      //     }
-      //   }
-      //   setErrorsState('_all', _errors);
-      // }
+      if (elements?.length) {
+        for (let ele of elements) {
+          const name = ele.name;
+          elementsObj[name] = ele;
+          if (name && !initialValues[name]) {
+            if (ele.type === 'checkbox') {
+              const _checked = ele.checked;
+              if (valueAs[name] === valueAs_default.VALUEASTOGGLE) {
+                _values[name] = _checked;
+              } else {
+                _values[name] = Array.isArray(_values[name]) ? _values[name].filter(v => v !== ele.value) : [];
+                if (_checked) _values[name].push(ele.value);
+              }
+            } else if (ele.type === 'radio' && valueAs[name] === valueAs_default.VALUEASTOGGLE) {
+              if (_values[name] === 'true') {
+                _values[name] = true;
+              } else if (_values[name] === 'false') {
+                _values[name] = false;
+              }
+            } else {
+              _values[name] = ele.value;
+            }
+          }
+        }
+        // 다중 선택 checkbox 때문에 분리 함
+        for (let [key, value] of Object.entries(_values)) {
+          const ele = elementsObj[key];
+          const error = constraintValidation(ele, customValidates[key], valueAs[key], value);
+          if (error.type) {
+            _errors[key] = error;
+          }
+        }
+        setErrorsState('_all', _errors);
+      }
 
-      // if (!Object.keys(initialValues).length) {
-      //   setValuesState('_all', trimData(_values));
-      // } else {
-      const realTimeValues = getRealTimeValues();
-      setValuesState('_all', trimData(realTimeValues));
-      // }
+      if (!Object.keys(initialValues).length) {
+        setValuesState('_all', trimData(_values));
+      } else {
+        const realTimeValues = getRealTimeValues();
+        setValuesState('_all', trimData(realTimeValues));
+      }
 
       setIsSubmitting(true);
       setIsSubmitSuccessful(false);

@@ -7,8 +7,10 @@ export function FormTest() {
   // console.log('values--', values);
 
   const onSubmit = value => {
-    // console.log('value', value);
-    alert(`id: ${value?.id}, \nevent수신: ${value?.event?.join('. ')},\n약관 동의 ${value.agree ? '' : '안'}하셨습니다.
+    console.log('value', value);
+    alert(`id: ${value?.id},${
+      value?.genderYN ? `\n성별: ${value?.gender},` : ''
+    } \nevent 수신 방식: ${value?.event?.join('. ')},\n약관 동의 ${value.agree ? '' : '안'}하셨습니다.
     `);
   };
 
@@ -62,6 +64,29 @@ export function FormTest() {
             ></input>
             {getErrMsgByErrorType('pw2', errors?.pw2?.type) && (
               <span className="form-error-msg">{getErrMsgByErrorType('pw2', errors?.pw2?.type)} </span>
+            )}
+          </div>
+
+          <div className="form-label-input-wrapper">
+            <h3 className="form-label">성별 등록</h3>
+            <SwitchToggle {...register('genderYN', { valueAsToggle: true })} />
+            {values?.genderYN && (
+              <div className="form-label-input-wrapper">
+                <h3 className="form-label">성별 선택</h3>
+                <select
+                  className="form-select"
+                  {...register('gender', {
+                    required: true,
+                  })}
+                >
+                  <option value="">성별</option>
+                  <option value="남자">남자</option>
+                  <option value="여자">여자</option>
+                </select>
+                {getErrMsgByErrorType('gender', errors?.gender?.type) && (
+                  <span className="form-error-msg">{getErrMsgByErrorType('gender', errors?.gender?.type)} </span>
+                )}
+              </div>
             )}
           </div>
 
