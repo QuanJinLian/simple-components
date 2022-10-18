@@ -4,7 +4,7 @@ import { initialMenu, routesConfig } from './defines';
 import { Navigation, navigationService, routerService, UiView } from './components';
 
 function App() {
-  routerService.setInitRoutes(routesConfig, '/');
+  routerService.setInitRoutes(routesConfig, '/tooltip');
   navigationService.setInitialMenu(initialMenu);
 
   return (
@@ -15,7 +15,6 @@ function App() {
           <UiView />
         </section>
       </div>
-      ;
     </div>
   );
 }
