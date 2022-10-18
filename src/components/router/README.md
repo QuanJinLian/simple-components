@@ -94,6 +94,7 @@ const routesConfig_example = [
   },
 ];
 
+// 최상위에서 HashRouter 로 감싸기
 ReactDOM.render(
     <HashRouter>
       <App />
@@ -103,6 +104,7 @@ ReactDOM.render(
 
 
 function App() {
+  // 라우터 config, defaultUrl setting
   routerService.setInitRoutes(routesConfig_example, '/country/kr');
 
   return (
