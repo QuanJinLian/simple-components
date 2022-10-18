@@ -89,6 +89,7 @@ let initialMenu_example= [
 ];
 
 function App() {
+	// 네이비게이션 config 셋팅
 	navigationService.setInitialMenu(initialMenu_example);
 	return (
 		<>
