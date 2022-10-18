@@ -139,7 +139,7 @@ export function FormTest() {
 
           <div className="button-set">
             <button className="test-button" disabled={!isValidate || !isDirty}>
-              submint
+              submint
             </button>
             <button type="button" className="test-button cancle" onClick={onClick_reset}>
               cancel
