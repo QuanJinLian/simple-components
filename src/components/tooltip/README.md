@@ -31,7 +31,7 @@
 #### 경우의 수 - placement = 'top-center' / 'bottom-center' ( 수평 위치 )
 
 ![](https://user-images.githubusercontent.com/79301822/192125709-c23521b2-4282-412f-b773-f0ddddb86d87.png)
-![](https://user-images.githubusercontent.com/79301822/192125708-326c9ddb-e8cb-4d01-be15-ca4fcf738f46.png)
+![](https://user-images.githubusercontent.com/79301822/192125708-326c9ddb-e8cb-4d01-be15-ca4fcf738f46.png){: width="441" height="371"}
 
 ### 경우의 수 - placement = 'left-...' ( 수평 위치 )
 
@@ -43,8 +43,8 @@
 
 ### 경우의 수 - placement = 'left-center' / 'right-center' ( 수직 위치 )
 
-![](https://user-images.githubusercontent.com/79301822/192125704-d0a9157f-3228-4060-948f-ad7a00278807.png)
-![](https://user-images.githubusercontent.com/79301822/192125703-90ab547d-e816-4c6f-bdf2-f52e325485b2.png)
+![](https://user-images.githubusercontent.com/79301822/192125704-d0a9157f-3228-4060-948f-ad7a00278807.png){: width="441" height="371"}
+![](https://user-images.githubusercontent.com/79301822/192125703-90ab547d-e816-4c6f-bdf2-f52e325485b2.png){: width="441" height="371"}
 
 ## API
 
