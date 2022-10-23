@@ -95,6 +95,13 @@ div.inner {
     justify-content: center;
   }
 }
+.demo3 {
+  margin-top: 100px;
+  margin-left: 150px;
+  .right-wrapper {
+    margin-left: 140px;
+  }
+}
 
 //  mouseEnter Delay || mouseLeave Delay || tooltip mouseOver visible 예제
 
@@ -142,4 +149,63 @@ div.inner {
 }
 .prompt-text__span {
   display: flex;
+}
+.tooltip-container.comfirmTooltip {
+  .tooltip-inner {
+    color: #999;
+    background-color: #fff;
+  }
+  .arrow-border {
+    z-index: 1;
+  }
+  .border-top,
+  .border-top-left,
+  .border-top-right {
+    border-color: #fff transparent transparent transparent;
+  }
+
+  .border-right,
+  .border-right-top,
+  .border-right-bottom {
+    border-color: transparent #fff transparent transparent;
+  }
+
+  .border-bottom,
+  .border-bottom-left,
+  .border-bottom-right {
+    border-color: transparent transparent #fff transparent;
+  }
+
+  .border-left,
+  .border-left-top,
+  .border-left-bottom {
+    border-color: transparent transparent transparent #fff;
+  }
+}
+.comfirmWrapper {
+  padding: 10px;
+  font-size: medium;
+  .anticon-exclamation-circle {
+    display: inline-block;
+    width: 12;
+    height: 12px;
+  }
+  .ant-popover-message-title {
+    display: inline-flex;
+    margin-left: 5px;
+  }
+  .ant-popover-buttons {
+    margin-bottom: 4px;
+    text-align: right;
+    button {
+      margin-left: 5px;
+      border: none;
+      border-radius: 3px;
+      width: 34px;
+      cursor: pointer;
+    }
+    .ant-btn-primary {
+      background: #1aab8a;
+    }
+  }
 }
