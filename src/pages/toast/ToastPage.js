@@ -15,12 +15,15 @@ export function ToastPage() {
   const showToast = (level, duration, onClose) => {
     const name = level === 1 ? 'normal' : level === 2 ? 'waring' : 'error';
     num++;
-    toastService.add(`this is a ${name} - ${num} toast`, level, { duration, onClose });
+    toastService.add(`this is a ${name} - ${num} toast that lasts ${duration ?? '5'} seconds.`, level, {
+      duration,
+      onClose,
+    });
   };
 
   const onClose = toastMsg => {
     // console.log('toastMsg', toastMsg);
-    toastService.add(`${toastMsg.key} toast is closed`, 1);
+    toastService.add(`${toastMsg.key} toast is closed and this will lasts 5 seconds`, 1);
   };
   return (
     <>
