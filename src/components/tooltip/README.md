@@ -12,7 +12,7 @@
 
 ### 사용법 > > 효과
 
-![](https://user-images.githubusercontent.com/79301822/192125714-a282815a-c6cf-4685-9bcc-52c781d58f25.png)
+<img src="https://user-images.githubusercontent.com/79301822/192125714-a282815a-c6cf-4685-9bcc-52c781d58f25.png" width='441px'/>
 
 #### 공통 position
 
@@ -22,25 +22,25 @@
 
 #### 경우의 수 - placement = 'top-...' ( 수직 위치 )
 
-![](https://user-images.githubusercontent.com/79301822/192125711-e035fc5d-04ab-4a87-9230-5b6f8bfc1cdd.png)
+<img src="https://user-images.githubusercontent.com/79301822/192125711-e035fc5d-04ab-4a87-9230-5b6f8bfc1cdd.png" width='441px'/>
 
 #### 경우의 수 - placement = 'bottom-...' ( 수직 위치 )
 
-![](https://user-images.githubusercontent.com/79301822/192125710-08c23ce0-66ef-48b3-93bb-94af4adca25a.png)
+<img src="https://user-images.githubusercontent.com/79301822/192125710-08c23ce0-66ef-48b3-93bb-94af4adca25a.png" width='441px'/>
 
 #### 경우의 수 - placement = 'top-center' / 'bottom-center' ( 수평 위치 )
 
-![](https://user-images.githubusercontent.com/79301822/192125709-c23521b2-4282-412f-b773-f0ddddb86d87.png)
+<img src="https://user-images.githubusercontent.com/79301822/192125709-c23521b2-4282-412f-b773-f0ddddb86d87.png" width='441px'/>
 
 <img src="https://user-images.githubusercontent.com/79301822/192125708-326c9ddb-e8cb-4d01-be15-ca4fcf738f46.png" width='441px' height='477px'/>
 
 ### 경우의 수 - placement = 'left-...' ( 수평 위치 )
 
-![](https://user-images.githubusercontent.com/79301822/192125707-2e0deeb9-a713-47ff-a6c8-12a3988f19ee.png)
+<img src="https://user-images.githubusercontent.com/79301822/192125707-2e0deeb9-a713-47ff-a6c8-12a3988f19ee.png" width='441px'/>
 
 ### 경우의 수 - placement = 'right-...' ( 수평 위치 )
 
-![](https://user-images.githubusercontent.com/79301822/192125705-11951f04-436c-44ca-b721-d3fdbe987258.png)
+<img src="https://user-images.githubusercontent.com/79301822/192125705-11951f04-436c-44ca-b721-d3fdbe987258.png" width='441px'/>
 
 ### 경우의 수 - placement = 'left-center' / 'right-center' ( 수직 위치 )
 
@@ -50,13 +50,13 @@
 
 ## API
 
-| 변수명           | 설명                                                                                                                                                                           | 필수 여부 | 타입                       | default 값                                                                                                           |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| 변수명           | 설명                                                                                                                                                                           | 필수 여부 | 타입                         | default 값                                                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | title            | tooltip 에 보여 질 text 혹은 컴포넌트 내용                                                                                                                                     | O         | string / number/ HTMLElement | -                                                                                                                    |
-| placement        | tooltip 이 보여 질 위치 [ 'top' , 'left' , 'right' , 'bottom' ,'top-left', 'top-right', 'left-top', 'left-bottom', 'right-top', 'right-bottom', 'bottom-left', 'bottom-right'] | X         | string                     | 값이 없을 경우 'top' >> 'right' >> 'bottom' >> 'left' 순서로 rendering 할 공간이 있는지 판단하여 placement 값 return |
-| overlayClassName | tooltip-container 영역에 추가 할 className                                                                                                                                     | X         | string                     | 'tooltip-container'                                                                                                  |
-| maxWidth         | tooltip 의 최대 넓이를 지정하고 싶을 때 사용 함                                                                                                                                | X         | string                     | -                                                                                                                    |
-| isHidden         | 툴팁 포지션 계산 안되고 숨김 처리 됨. false => 정상 표현 ( default ) true => 숨김                                                                                              | X         | boolean                    | false                                                                                                                |
+| placement        | tooltip 이 보여 질 위치 [ 'top' , 'left' , 'right' , 'bottom' ,'top-left', 'top-right', 'left-top', 'left-bottom', 'right-top', 'right-bottom', 'bottom-left', 'bottom-right'] | X         | string                       | 값이 없을 경우 'top' >> 'right' >> 'bottom' >> 'left' 순서로 rendering 할 공간이 있는지 판단하여 placement 값 return |
+| overlayClassName | tooltip-container 영역에 추가 할 className                                                                                                                                     | X         | string                       | 'tooltip-container'                                                                                                  |
+| maxWidth         | tooltip 의 최대 넓이를 지정하고 싶을 때 사용 함                                                                                                                                | X         | string                       | -                                                                                                                    |
+| isHidden         | 툴팁 포지션 계산 안되고 숨김 처리 됨. false => 정상 표현 ( default ) true => 숨김                                                                                              | X         | boolean                      | false                                                                                                                |
 
 ## 사용법
 
