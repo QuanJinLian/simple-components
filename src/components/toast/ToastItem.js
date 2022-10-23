@@ -43,7 +43,7 @@ function ToastItem({ toastMsg, close }) {
   const levelClassName = levelClass(level);
 
   return (
-    <>
+    <div className="toast-item-wrapper">
       <div className={`toast-box ${wrapperClassName} ${levelClassName}`}>
         <div className="msg-icon-box">
           <div className="msg-icon" />
@@ -51,7 +51,7 @@ function ToastItem({ toastMsg, close }) {
         <div className="msg-letter">{msg ?? ''}</div>
         <div className="toast-close cursor-pointer" onClick={onClick} />
       </div>
-    </>
+    </div>
   );
 }
 
