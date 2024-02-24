@@ -43,15 +43,15 @@ export const initialMenu = [
       },
     ],
   },
-  // {
-  //   id: 4,
-  //   name: 'Navigation',
-  //   icon: 'navigation',
-  //   subMenu: [
-  //     {
-  //       name: 'Navigation',
-  //       path: '/navigation',
-  //     },
-  //   ],
-  // },
+  {
+    id: 4,
+    name: 'useGlobalState',
+    icon: 'navigation',
+    subMenu: [
+      {
+        name: 'useGlobalState',
+        path: '/useGlobalState',
+      },
+    ],
+  },
 ];

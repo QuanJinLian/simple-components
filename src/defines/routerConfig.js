@@ -1,4 +1,4 @@
-import { NavigationPage, ToastPage, TooltipPage, ESCTestPage, FormTest } from '../pages';
+import { NavigationPage, ToastPage, TooltipPage, ESCTestPage, FormTest, GlobalStatePage } from '../pages';
 
 export const routesConfig = [
   {
@@ -25,5 +25,10 @@ export const routesConfig = [
     name: 'navigation',
     path: '/navigation',
     component: NavigationPage,
+  },
+  {
+    name: 'useGlobalState',
+    path: '/useGlobalState',
+    component: GlobalStatePage,
   },
 ];
