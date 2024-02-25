@@ -10,7 +10,6 @@ React, javascript, css, scss, html
 
 ## [Demo](https://quanjinlian.github.io/simple-components-demo)
 
-
 ## 테스트 페이지 실행
 
 1. 다운로드
@@ -30,3 +29,5 @@ React, javascript, css, scss, html
 ### [ESC event control](https://github.com/QuanJinLian/simple-components/tree/main/src/components/escEventContorl)
 
 ### [useForm](https://github.com/QuanJinLian/simple-components/tree/main/src/components/useForm)
+
+### [useGlobalState (Zustand 원리 간단 이해)](https://github.com/QuanJinLian/simple-components/tree/main/src/components/useGlobalState)
