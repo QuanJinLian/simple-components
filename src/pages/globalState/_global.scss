@@ -64,12 +64,34 @@ div:has(> .global-page) {
   }
 }
 .line {
-  --mar: 20px;
-  width: calc(100% - var(--mar) * 2);
-  margin: var(--mar);
+  --marTB: 40px;
+  --marRL: 20px;
+  width: calc(100% - var(--marRL) * 2);
+  margin: var(--marTB) var(--marRL);
   padding: 2px 0;
   border-top: 2px dashed #999;
   border-bottom: 2px dashed #999;
+}
+
+.edit-form-component{
+  position: relative;
+}
+
+.subscribe-button-wrapper{
+  position: absolute;
+  top: -45px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  button { 
+    padding: 10px;
+    width: 140px;
+
+    &.cancel{ 
+      --bc: red
+    }
+  }
 }
 
 .edit-form-wrapper,

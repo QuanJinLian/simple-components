@@ -1,9 +1,12 @@
-import React from 'react';
-import { create } from '../../components/useGlobalState';
+import React, { useEffect } from 'react';
 import { countOb } from './createStore';
 
 export default function GlobalStateBlockItem({ title, hideNumber = false }) {
   const count = countOb.useGlobalState();
+
+  useEffect(() => {
+    console.log(`count---구독---${title}`, count);
+  }, [count]);
 
   return (
     <div className="global-block">
