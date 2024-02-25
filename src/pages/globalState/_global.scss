@@ -63,3 +63,91 @@ div:has(> .global-page) {
     }
   }
 }
+.line {
+  --mar: 20px;
+  width: calc(100% - var(--mar) * 2);
+  margin: var(--mar);
+  padding: 2px 0;
+  border-top: 2px dashed #999;
+  border-bottom: 2px dashed #999;
+}
+
+.edit-form-wrapper,
+.show-form-card-wrapper {
+  border-radius: 5px;
+  border: 3px solid rgb(222, 209, 235);
+  padding: 5px;
+  height: fit-content;
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.edit-form-wrapper {
+  --zoom: 0.8
+  zoom: var(--zoom);
+  h1 {
+    zoom: calc(1 / var(--zoom));
+  }
+}
+
+.show-form-card {
+  &-wrapper{
+    max-width: 470px;
+  }
+
+  display: grid;
+  grid-template-columns: 150px  minmax(200px, 1fr);
+  grid-auto-rows: minmax(35px, auto);
+  grid-gap: 5px;
+
+  span {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    font-weight: 600;
+    border: 3px solid rgb(222, 209, 235);
+    border-radius: 5px;    
+    word-wrap: break-word;
+    word-break: break-all;
+
+    &:nth-child(2n + 1) {
+      justify-content: flex-end;
+    }
+
+    &:nth-child(2n) {
+      justify-content: flex-start;
+    }
+
+    &.yes, &.yes+span {
+      color: rgb(13, 142, 13);
+    }
+    &.no, &.no+span{
+      color: red;
+    }
+    &.여자, &.여자+span{
+      color:rgb(227, 139, 153)
+    }
+    &.남자, &.남자+span{
+      color:blue
+    }
+
+  }
+
+
+}
+
+.form-exam{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  >div{
+    margin: 20px;
+  }
+}

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from '../../components';
 import './form.scss';
 
-export function FormTest() {
-  const { values, register, errors, isValidate, isDirty, handleSubmit, handleReset } = useForm();
-  // console.log('values--', values);
+export function FormTest({ onValueChange, initialValues }) {
+  const { values, register, errors, isValidate, isDirty, handleSubmit, handleReset } = useForm({
+    initialValues: initialValues ?? {},
+  });
+  // console.log('initialValues--', initialValues, values);
 
   const onSubmit = value => {
     console.log('value', value);
@@ -17,6 +19,10 @@ export function FormTest() {
   const onClick_reset = () => {
     handleReset('_all');
   };
+
+  useEffect(() => {
+    onValueChange?.(values);
+  }, [values]);
 
   return (
     <div className="form-wrapper">

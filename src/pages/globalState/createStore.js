@@ -15,3 +15,24 @@ export const countOb = create({
     },
   },
 });
+
+const initForm = {
+  id: '초기값',
+  genderYN: true,
+  gender: '여자',
+  event: ['이메일'],
+  agree: false,
+};
+
+export const formObserve = create({
+  name: 'user-info',
+  initialState: initForm,
+  reducers: {
+    upateForm: (state, payload) => {
+      return payload;
+    },
+    resetForm: state => {
+      return initForm;
+    },
+  },
+});
