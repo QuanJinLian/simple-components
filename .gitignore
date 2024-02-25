@@ -8,3 +8,4 @@ package-lock.json
 *.css
 *.css.map
 *.scssc
+.DS_Store

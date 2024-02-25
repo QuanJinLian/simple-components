@@ -8,7 +8,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'main.js',
+    filename: 'main.[chunkhash:5].js',
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
@@ -51,7 +51,7 @@ module.exports = {
       template: './public/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      filename: 'style.[chunkhash:5].css',
     }),
     new CopyPlugin({
       patterns: [{ from: 'src/asset', to: 'asset' }],
