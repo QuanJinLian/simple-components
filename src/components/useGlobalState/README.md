@@ -36,7 +36,7 @@ https://quanjinlian.github.io/simple-components-demo/#/useGlobalState
 
 ## 아키텍처
 
-![alt text](../../asset/image/useGlobalStateArchitecture.png)
+![alt text](../../asset/image/useGlobalStateArchitecture1.png)
 
 ### 전체 로직
 
