@@ -142,7 +142,7 @@ export function useFormState(initialValues) {
           const error = constraintValidation(ele, customValidates.current[key]);
           if (error.type) {
             setIsValidate(false);
-            return null;
+            return;
           }
         }
       }
@@ -165,15 +165,15 @@ export function useFormState(initialValues) {
 
   // unmount 시 데이터 날림
   useEffect(() => {
-    return () => {
-      setValues({});
-      valuesRef.current = {};
-      setIsSubmitting(false);
-      setIsSubmitSuccessful(false);
-      errorsRef.current = {};
-      setIsDirty(false);
-      setIsValidate(false);
-    };
+    // return () => {
+    //   setValues({});
+    //   valuesRef.current = {};
+    //   setIsSubmitting(false);
+    //   setIsSubmitSuccessful(false);
+    //   errorsRef.current = {};
+    //   setIsDirty(false);
+    //   setIsValidate(false);
+    // };
   }, []);
 
   return {

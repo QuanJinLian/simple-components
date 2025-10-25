@@ -61,7 +61,6 @@ module.exports = {
     host: 'localhost',
     open: true,
     port: 3005,
-    overlay: true,
     hot: true,
   },
 };
