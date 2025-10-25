@@ -1,0 +1,333 @@
+.ikea-table {
+  --tr-hover-bg: rgba(91, 91, 91, 0.1);
+  width: 100%;
+  //height: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  &-tr {
+    .expandable-icon {
+      position: relative;
+      cursor: pointer;
+    }
+    &.row-disExpandable {
+      .expandable-icon {
+        opacity: 0.3;
+      }
+      &.expandable-tr > td {
+        padding: 0;
+      }
+    }
+    &:hover,
+    &:has(+ .expandable-tr:hover),
+    &:hover + .expandable-tr {
+      background-color: var(--tr-hover-bg);
+    }
+    &:not(:has(+ .expandable-tr.expanded)) {
+      border-bottom: 0.5rem solid #999;
+    }
+  }
+
+  &-th {
+    padding: 10rem;
+
+    &-content-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    &-title-wrapper {
+      flex-grow: 1;
+      display: flex;
+    }
+    &-title {
+      flex-grow: 1;
+    }
+
+    &-button {
+      cursor: pointer;
+      width: 10rem;
+      height: 10rem;
+    }
+
+    &.radioBox,
+    &.checkbox,
+    &.No,
+    &.expandable-icon {
+      width: 50rem;
+    }
+  }
+
+  &-td {
+    padding: 10rem;
+    text-align: center;
+  }
+
+  &.align-left {
+    th,
+    td {
+      text-align: left;
+    }
+  }
+  &.align-right {
+    th,
+    td {
+      text-align: right;
+    }
+  }
+
+  th,
+  td {
+    &.align-left {
+      text-align: left;
+    }
+    &.align-right {
+      text-align: right;
+    }
+    &.checkbox,
+    &.expandable-icon,
+    &.No {
+      width: 50rem;
+    }
+  }
+
+  &-th {
+    &.has-sort {
+      cursor: pointer;
+
+      &:not(:has(.sort-inner > *)) {
+        .sort {
+          display: flex;
+          background-image: url('./assets/sort-svgrepo-com.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          opacity: 0.3;
+          width: 16rem;
+          height: 16rem;
+
+          .sort-inner {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &.descend {
+          .sort {
+            background-image: url('./assets/sort-descending-svgrepo-com.svg');
+          }
+        }
+
+        &.ascend {
+          .sort {
+            background-image: url('./assets/sort-ascending-svgrepo-com.svg');
+          }
+        }
+      }
+    }
+    &.filtered {
+      .ikea-table-th-button.filter {
+        background-image: url('./assets/filter-filtered.svg');
+      }
+    }
+
+    .ikea-table-th-button.filter {
+      display: block;
+      width: 16rem;
+      height: 16rem;
+      background-image: url('./assets/filter.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &.empty {
+    .ikea-empty {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  .label-container__label.radioBox {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --size: 13rem;
+    --circle-size: 8rem;
+    --bg-color: #7e61ff;
+
+    cursor: pointer;
+    .check-mark__radiobox {
+      position: relative;
+      width: var(--size);
+      height: var(--size);
+      left: unset;
+      top: unset;
+      order: -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input {
+      width: 0;
+      position: absolute;
+    }
+
+    &:has(input:disabled),
+    &.readOnly {
+      cursor: not-allowed;
+      .check-mark__radiobox {
+        opacity: 0.3;
+      }
+    }
+
+    .label-input__radiobox:checked ~ .check-mark__radiobox {
+      background-color: #fff;
+      border: 2rem solid var(--bg-color);
+
+      &::after {
+        background-color: var(--bg-color);
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: unset;
+        left: unset;
+      }
+    }
+  }
+}
+.ikea-popover-wrapper.ikea-table-filter-component {
+  .popover-inner {
+    background: #5b5b5b;
+  }
+  .arrow-border {
+    visibility: hidden;
+  }
+}
+.ikea-table-filter-component {
+  .popover-inner {
+    padding: 10rem;
+    background: #5b5b5b;
+  }
+}
+
+.ikea-table-checkbox {
+  &-wrapper {
+    --size: 16rem;
+    --checkSize: 2rem;
+    --checkColor: #fff;
+    --bgColor: #1677ff;
+    --borderColor: #999;
+    --borderRadius: 4rem;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: var(--size);
+    list-style: none;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+
+    input {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      margin: 0;
+      opacity: 0;
+    }
+
+    &:has(input[type='checkbox']:checked) {
+      .ikea-table-checkbox-inner {
+        background-color: #ff6161;
+        border-color: #ff6161;
+
+        &::after {
+          box-sizing: border-box;
+          position: absolute;
+          top: 50%;
+          inset-inline-start: 25%;
+          display: table;
+          width: calc(var(--size) / 14 * 5);
+          height: calc(var(--size) / 14 * 8);
+          border: var(--checkSize) solid var(--checkColor);
+          border-top: 0;
+          border-inline-start: 0;
+          content: '';
+          opacity: 1;
+          transform: rotate(45deg) scale(1) translate(-50%, -50%);
+        }
+      }
+    }
+    &:has(input[type='checkbox']:disabled) {
+      cursor: default;
+      * {
+        cursor: default;
+      }
+      .ikea-table-checkbox-inner {
+        opacity: 0.3;
+      }
+    }
+
+    &.half {
+      .ikea-table-checkbox-inner::after {
+        position: absolute;
+        top: 50%;
+        inset-inline-start: 50%;
+        width: calc(var(--size) / 2);
+        height: calc(var(--size) / 2);
+        background-color: #1677ff;
+        border: 0;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        content: '';
+      }
+    }
+  }
+  &-span {
+    margin: 0;
+    padding: 0;
+    color: rgb(216 36 36 / 88%);
+    line-height: 1;
+    list-style: none;
+    position: relative;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: var(--borderRadius);
+    align-self: center;
+  }
+  &-inner {
+    background-color: #fff;
+    box-sizing: border-box;
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    direction: ltr;
+    border: 1rem solid var(--borderColor);
+    border-radius: var(--borderRadius);
+    border-collapse: separate;
+  }
+}
+
+.ikea-table-wrapper {
+  overflow-y: auto;
+  border: 1rem solid #e4e4e4;
+
+  thead th {
+    position: sticky;
+    top: -1rem;
+    z-index: 1;
+    background: #fff;
+    border: 1rem solid #e4e4e4;
+  }
+}

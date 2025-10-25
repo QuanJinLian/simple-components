@@ -4,7 +4,6 @@ bin
 *.log
 /.idea
 .vscode
-package-lock.json
 *.css
 *.css.map
 *.scssc

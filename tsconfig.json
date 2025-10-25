@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "es5",
+    "downlevelIteration": true,
+    "lib": ["dom", "es6", "es2016", "es2017", "es2021"],
+    "jsx": "react-jsx",
+    "types": ["react"],
+    "sourceMap": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["index.d.ts", "node_modules/@types"],
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": false
+  },
+  "files": ["src/images.d.ts"],
+  "include": ["src"],
+  "exclude": ["node_modules", "package.json"]
+}
